@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ARC Test</title>
+
+    <link rel="stylesheet" type="text/css" href="arc/css/arc.css">
+    <link rel="stylesheet" type="text/css" href="arc/css/library.css">
+    <link rel="stylesheet" type="text/css" href="css/oet.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Calendar</title>
+
+    <!--<script src="jquery/jquery-2.1.3.min.js"></script>-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      
+    <script src="ckeditor/ckeditor.js"></script>
+
+</head>
+<body>
+
+<div id="application">
+
+
+<div class="row display" id="toparea">
+    <div class="small-4 large-4 columns"><a href="//albelli.nl"><img src='img/logo-desktop.png'></a></div>
+    <div class="small-4 large-4 columns"><p>&nbsp;</p></div>
+    <div class="small-4 large-4 columns">
+        <a target="_blank" href="http://www.albelli.nl/klantenservice/" title="Bekijk de veel gestelde vragen">Klantenservice</a>
+        <i class="icon reset small"></i>
+    </div>
+</div>
+
+<div class="row display" id="largemiddle">
+    <div class="small-4 large-4 columns">
+        <a href="#"><img src='img/events.png'></a>
+        <a href="#" class="small  button" id="popupfonts">Font</a>
+    </div>
+    <div class="small-4 large-4 columns"><span id="product-title">Kalender Staand A5</span></div>
+    <div class="small-4 large-4 columns">
+        <div class="row display">
+            <div class="small-6 large-6 columns"><div id="top-price">€9,95</div></div>
+            <div class="small-6 large-6 columns"><a href="#" class="small  button">Bestellen</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="row display" id="smallmiddle">
+    <div class="small-6 large-6 columns"><a href="#"><img src='img/events.png'></a></div>
+    <div class="small-6 large-6 columns"><a href="#" class="small  button">Bestellen</a></div>
+</div>
+
+<div id="canvasarea">
+
+    <div class="row display" id="calendarareasmall">
+        <div class="small-12 large-12 columns">
+            <img src='img/calendartop.png' class="mycalendar">
+            <img src='img/calendarbottom.png' class="mycalendar">
+        </div>
+    </div>
+
+    <div class="row display" id="calendarareabig">
+        <div class="small-2 large-2 columns arrow"><a href="#"><img src='img/leftarrow.svg'></a></div>
+        <div class="small-8 large-8 columns" id="fontplaceholder">
+
+            <div id="editormain1" class="editormainclass">
+                <div id="editorboxtitle1" class="editorboxtitleclass">Drag me!</div>
+                <div id="editor1" contenteditable="true">
+                    <p>The "div" element that contains this text is now editable.
+                </div>
+            </div>
+            <script>
+                // Turn off automatic editor creation first.
+                CKEDITOR.disableAutoInline = true;
+                CKEDITOR.inline( 'editor1' );
+
+                var newBox = $("#editormain1");
+                newBox.css("position", "absolute");
+                var dgg = newBox.draggable;
+                newBox.draggable({handle: "#editorboxtitle1", containment: "parent"});
+                var rsb = newBox.resizable;
+                newBox.resizable({ handles: "e" });
+
+
+                myCounter = 1;
+                $( "#popupfonts" ).click(function() {
+                    myCounter++;
+                    //var myContent = $( "#editormain1" ).parent().html();
+                    //var myContent = $( "#editormain1" )[0].outerHTML;
+                    //myContent = myContent.replace("editormain1", "editormain" + myCounter);
+                    //myContent = myContent.replace("editorboxtitle1", "editorboxtitle" + myCounter);
+                    //myContent = myContent.replace("editor1", "editor" + myCounter);
+                    //$( "#editormain1" ).clone().html( myContent ).attr('id', "editormain" + myCounter).appendTo( "#fontplaceholder" );
+                    var myContent = '<div id="editormain' + myCounter + '" class="editormainclass">';
+                    myContent += '<div id="editorboxtitle' + myCounter + '" class="editorboxtitleclass">Drag me!</div>';
+                    myContent += '<div id="editor' + myCounter + '" contenteditable="true">';
+                    myContent += '<p>The "div" element that contains this text is now editable.';
+                    myContent += '</div>';
+                    myContent += '</div>';
+                    $( "#fontplaceholder" ).prepend( myContent );
+
+                    // Turn off automatic editor creation first.
+                    CKEDITOR.disableAutoInline = true;
+                    CKEDITOR.inline( 'editor' + myCounter );
+
+                    var newBox = $("#editormain" + myCounter);
+                    newBox.css("position", "absolute");
+                    newBox.draggable = dgg;
+                    newBox.draggable({handle: "#editorboxtitle" + myCounter, containment: "parent"});
+                    newBox.resizable = rsb;
+                    newBox.resizable({ handles: "e" });
+                });
+            </script>
+
+            <img src='img/calendartop.png' class="mycalendar">
+            <img src='img/calendarbottom.png' class="mycalendar">
+        </div>
+        <div class="small-2 large-2 columns arrow"><a href="#"><img src='img/rightarrow.svg'></a></div>
+    </div>
+</div>
+
+<div class="section-container tabs" data-section="tabs">
+    <section class="active">
+    <p class="title" data-section-title><a href="#"><i class="icon basket small"></i><i class="footer-text">Maanden</i></a></p>
+    <div class="content footercontainer" data-section-content>
+        <table id="footermonths">
+          <tbody>
+            <tr>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+              <td>
+                <img src="img/month.png">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </section>
+    <section>
+        <p class="title" data-section-title><a href="#"><i class="icon filter small"></i><i class="footer-text">Je foto's</i></a></p>
+        <div class="content footercontainer" data-section-content>
+            <img src="img/photoupload.png">
+        </div>
+    </section>
+    <section>
+        <p class="title" data-section-title><a href="#"><i class="icon arrow-right small"></i><i class="footer-text">Achtergronden</i></a></p>
+        <div class="content footercontainer" data-section-content>
+        <table id="footercolor">
+          <tbody>
+            <tr>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+              <td>
+                <img src="img/color.png">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </section>
+</div>
+
+<div data-alert="" class="modal-alert orange" id="startup-alert">
+  <p>
+    Welkom bij het nieuwe kalenderprogramma voor je tablet!
+    We doen onze uiterste best om dit programma zo snel mogelijk uit te breiden met alle opties die je ook op je pc of laptop hebt, zoals thema's en andere opmaakextra's.
+  </p>
+  <a href="" class="close">x</a>
+  <!--<a href="#" class="small button secondary">Yes</a>-->
+  <a href="#" class="small button secondary justclose">Maak je kalender</a>
+</div>
+
+  <script src="jquery/jquery-2.1.3.min.js"></script>
+  <script src="arc/js/arc/arc.js"></script>
+  <script src="arc/js/arc/arc.alerts.js"></script>
+  <script src="arc/js/arc/arc.buttons.js"></script>
+  <script src="arc/js/arc/arc.clearing.js"></script>
+  <script src="arc/js/arc/arc.cookie.js"></script>
+  <script src="arc/js/arc/arc.dropdown.js"></script>
+  <script src="arc/js/arc/arc.interchange.js"></script>
+  <script src="arc/js/arc/arc.joyride.js"></script>
+  <script src="arc/js/arc/arc.magellan.js"></script>
+  <script src="arc/js/arc/arc.orbit.js"></script>
+  <script src="arc/js/arc/arc.placeholder.js"></script>
+  <script src="arc/js/arc/arc.reveal.js"></script>
+  <script src="arc/js/arc/arc.section.js"></script>
+  <script src="arc/js/arc/arc.tooltips.js"></script>
+  <script src="arc/js/arc/arc.topbar.js"></script>
+  <script src="arc/js/arc/arc.squeezebox.js"></script>
+  <script src="arc/js/arc/arc.tables.js"></script>
+
+  <script type="text/javascript">
+    $(document).arc();
+
+    $('a.justclose').on('click', function() {
+        $('#startup-alert').fadeOut('slow');
+    });
+  </script>
+
+</div>
+</body>
+</html>

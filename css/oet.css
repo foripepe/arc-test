@@ -1,0 +1,96 @@
+@media (max-width: 700px) {
+  #largemiddle {
+    display: none;
+  }
+}
+@media (min-width: 700px) {
+  #smallmiddle {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  i.footer-text {
+    display: none;
+  }
+}
+
+@media (max-width: 500px), (max-height: 650px) {
+  #toparea {
+    display: none;
+  }
+  #calendarbottom {
+    //display: none;
+  }
+}
+
+@media (max-height: 550px) {
+  #calendarbottom {
+    //display: none;
+  }
+}
+
+@media (min-width: 300px) {
+  #calendarareasmall {
+    display: none;
+  }
+}
+@media (max-width: 300px) {
+  #calendarareabig {
+    display: none;
+  }
+}
+
+body, html {
+    overflow-x: hidden;
+    //overflow-y: hidden;
+}
+
+.mycalendar {
+}
+
+#canvasarea {
+    overflow: hidden;
+}
+
+.arrow {
+    margin-top: 40%;
+}
+
+#toparea {
+    background: #303235;
+}
+
+#calendarareabig {
+    background-color: #f4efec;
+}
+
+#calendarareasmall {
+    background-color: #f4efec;
+}
+
+.footercontainer {
+    overflow-x: auto;
+}
+
+#footermonths {
+    min-width: 500px;
+}
+
+#footercolor {
+    min-width: 1000px;
+}
+
+.editormainclass {
+    position: absolute;
+
+    border-style: solid;
+    border-width: 5px;
+    
+    width: 300px;
+    left: 75px;
+    top: 75px;
+}
+
+.editorboxtitleclass {
+    background-color: lightgrey;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>navigate-left</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="navigate-left" sketch:type="MSArtboardGroup" fill="#2B2C2D">
+            <path d="M4.38603918,17.6257745 C4.89986063,18.1247418 5.73405129,18.1247418 6.24864193,17.6257745 L13.614057,10.4036852 C14.1286477,9.9047179 14.1286477,9.0952821 13.614057,8.59631482 L6.24864193,1.37422546 C5.73405129,0.87525818 4.90024523,0.87525818 4.38603918,1.37422546 C3.87144854,1.87319274 3.87144854,2.68262855 4.38526999,3.18159583 L10.4253642,9.50184803 L4.38603918,15.8184042 C3.87144854,16.3173715 3.87144854,17.1268073 4.38603918,17.6257745 Z" id="Fill-162" sketch:type="MSShapeGroup" transform="translate(9.000000, 9.500000) scale(-1, 1) translate(-9.000000, -9.500000) "></path>
+        </g>
+    </g>
+</svg>
