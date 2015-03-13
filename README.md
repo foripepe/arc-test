@@ -1,5 +1,5 @@
-js-photobook
-============
+Responsive design test
+======================
 
 #Serving the files in local
 * Install: `npm install connect serve-static`
