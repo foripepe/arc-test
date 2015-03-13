@@ -88,12 +88,6 @@
                 myCounter = 1;
                 $( "#popupfonts" ).click(function() {
                     myCounter++;
-                    //var myContent = $( "#editormain1" ).parent().html();
-                    //var myContent = $( "#editormain1" )[0].outerHTML;
-                    //myContent = myContent.replace("editormain1", "editormain" + myCounter);
-                    //myContent = myContent.replace("editorboxtitle1", "editorboxtitle" + myCounter);
-                    //myContent = myContent.replace("editor1", "editor" + myCounter);
-                    //$( "#editormain1" ).clone().html( myContent ).attr('id', "editormain" + myCounter).appendTo( "#fontplaceholder" );
                     var myContent = '<div id="editormain' + myCounter + '" class="editormainclass">';
                     myContent += '<div id="editorboxtitle' + myCounter + '" class="editorboxtitleclass">Drag me!</div>';
                     myContent += '<div id="editor' + myCounter + '" contenteditable="true">';
