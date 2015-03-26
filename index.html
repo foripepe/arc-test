@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-      
+
+    <script src="jquery-ui-rotatable/jquery.ui.rotatable.js"></script>
+    <!-- this is small and will allow you to override look/feel of handle -->
+    <link rel="stylesheet" href="jquery-ui-rotatable/jquery.ui.rotatable.css">
+
     <script src="ckeditor/ckeditor.js"></script>
 
 </head>
@@ -83,6 +87,7 @@
                 newBox.draggable({handle: "#editorboxtitle1", containment: "parent"});
                 var rsb = newBox.resizable;
                 newBox.resizable({ handles: "e" });
+                newBox.rotatable();
 
 
                 myCounter = 1;
