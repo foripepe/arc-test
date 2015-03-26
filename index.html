@@ -87,6 +87,7 @@
                 newBox.draggable({handle: "#editorboxtitle1", containment: "parent"});
                 var rsb = newBox.resizable;
                 newBox.resizable({ handles: "e" });
+                var rot = newBox.rotatable;
                 newBox.rotatable();
 
 
@@ -111,6 +112,8 @@
                     newBox.draggable({handle: "#editorboxtitle" + myCounter, containment: "parent"});
                     newBox.resizable = rsb;
                     newBox.resizable({ handles: "e" });
+                    newBox.rotatable = rot;
+                    newBox.rotatable();
                 });
             </script>
 
